@@ -11,6 +11,7 @@ class ReportRepair():
 
             return input_parsed
 
+    # Given a function, value x, list of numbers, and target number, return a multiplication of the size x tuples that add up to the target number.
     def solve(func, val, numbers, target_num):
         num_list = list(filter(partial(func, target_num=target_num), list(combinations(numbers, val))))
 
