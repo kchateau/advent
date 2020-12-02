@@ -1,14 +1,12 @@
 class ReportRepair():
         
     def parse_input(filename):
-        my_file = open(filename, "r")
-        content = my_file.readlines()
-        input_parsed = []
-        
-        for val in content:
-            input_parsed.append(int(val.strip()))
+        with open(filename, "r") as my_file:
+            input_parsed = []
+            for line in my_file:
+                input_parsed.append(int(line))
 
-        return input_parsed
+            return input_parsed
 
     # Given a list of ints and a target value, return the multiplication of 2 numbers in the list that add to the target
     def doubles(numbers, target_number):
