@@ -89,7 +89,6 @@ class HandyHaversacks():
         total = 0
         self.question_1(bag_types, bags, total)
         question_2_parsed_input = self.parse_input_2(bag_types, bags, total)
-        # print(question_2_parsed_input)
         sorted_bags = self.sort_bags(question_2_parsed_input)
 
         for bag in sorted_bags:
@@ -99,19 +98,14 @@ class HandyHaversacks():
             num_bags = len(bag[2:]) / 3
             bag_without_name = bag[2:]
             for x in range(num_bags):
-                # print(x)
-                # print(bag_without_name)
                 count = bag_without_name.pop(0)
                 name = bag_without_name.pop(0) + ' ' + bag_without_name.pop(0)
                 contained_bag = ContainedBag(name, count)
                 contained_bag_list.append(contained_bag)
-                # print(repr(contained_bag))
             my_bag = Bag(bag_name, contained_bag_list)
             my_bags.append(my_bag)
 
         self.answer_question_2(my_bags)
-
-        
 
 class Bag():
     def __init__(self, name, bags):
